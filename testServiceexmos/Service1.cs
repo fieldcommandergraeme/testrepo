@@ -23,14 +23,14 @@ namespace testServiceexmos
             return string.Format("You entered: {0}", value);
         }
 
-        public double balance(double? Balance)
+        public double balance(double? NewBalancex)
         {
-            if(Balance != null)
+            if(NewBalancex != null)
             {
                 return 250.00;
             } else
             {
-                return Convert.ToDouble(Balance);
+                return Convert.ToDouble(NewBalancex);
             }
             
         }
