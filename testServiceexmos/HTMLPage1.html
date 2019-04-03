@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input id="balance"/>
+    <input id="payment" />
+    <input type="submit" onclick="calculate(1, payment, balance)" />
+    <label id="myLabel" style="display: none">Exception to display to user.</label>
+</body>
+</html>
+
+<script type="text/javascript">
+    function calculate(userID, myInput, balance)
+    {
+        $.ajax({
+            type: "POST",
+            url: "Service1.cs/AddPayment",
+            data: JSON.stringify({ money: money, Balancex: balance, AccountID: userID }),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                if (data.d == true)
+                {
+                    myLabel.style.display = "block";
+                } else {
+                    myLabel.style.display = "none";
+                }
+                
+            }
+        });
+    }
+
+</script>
