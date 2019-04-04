@@ -14,7 +14,7 @@ namespace testServiceexmos
     {
 
         [OperationContract]
-        double balance(double? NewBalancex);
+        double balance(double? NewBalancexxxxxxx);
 
         [OperationContract]
         string GetData(int value);
